@@ -1,12 +1,19 @@
 
 -- Table: document (d)
-CREATE OR REPLACE TABLE document (
-  d_id VARCHAR2(128) NOT NULL,
-  d_revision VARCHAR2(128) NOT NULL,
-  d_document  CLOB NOT NULL,
-  changed DATETIME DEFAULT SYSDATE,
-  PRIMARY KEY (d_id, d_revision)
+CREATE TABLE DOCUMENT 
+(
+  D_ID VARCHAR2(128) NOT NULL 
+, D_REVISION VARCHAR2(128) NOT NULL 
+, D_DOCUMENT CLOB NOT NULL 
+, CHANGED DATE DEFAULT sysdate 
+, CONSTRAINT DOCUMENT_PK PRIMARY KEY 
+  (
+    D_ID 
+  , D_REVISION 
+  )
+  ENABLE 
 );
+
 
 -- Table: document_update (du)
 CREATE TABLE IF NOT EXISTS document_update (
